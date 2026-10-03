@@ -1,0 +1,139 @@
+:root {
+    --bg-color: #09090b;
+    --card-bg: #18181b;
+    --text-primary: #fafafa;
+    --text-secondary: #a1a1aa;
+    --border-color: #27272a;
+    --input-bg: #00000053;
+    --accent-color: #3f3f46;
+    --accent-hover: #52525b;
+    --focus-ring: rgba(255, 255, 255, 0.15);
+    --success-bg: #e4e4e7;
+    --success-text: #000000;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 1rem;
+    color: var(--text-primary);
+    box-sizing: border-box;
+}
+
+.container {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    text-align: center;
+    font-size: 1.5rem;
+    letter-spacing: -0.025em;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+textarea, input {
+    width: 100%;
+    padding: 0.85rem;
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-family: monospace;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+textarea::placeholder, input::placeholder {
+    color: #52525b;
+}
+
+textarea:focus, input:focus {
+    outline: none;
+    border-color: #52525b;
+    box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+    margin-bottom: 1.5rem;
+}
+
+.output-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.output-group input {
+    background-color: #09090b;
+}
+
+button {
+    background: var(--accent-color);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100px; 
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+button:hover {
+    background: var(--accent-hover);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+button.success {
+    background: var(--success-bg);
+    color: var(--success-text);
+    border-color: var(--success-bg);
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem;
+    }
+    h2 {
+        font-size: 1.25rem;
+    }
+    .output-group {
+        flex-direction: column;
+    }
+    button {
+        width: 100%;
+        padding: 0.85rem;
+    }
+}
